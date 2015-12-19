@@ -1,7 +1,6 @@
 # A Math Toolkit for Java Developers
+Author: Joe Yanik (<yanikjoe@emporia.edu>)
 
-Author(s): 
-Joe Yanik
 The JOMA Developers' Area can provide a real service to the mathematical developer community by
 
 1. providing a single source that developers can go to in search of code that they can use and
@@ -54,5 +53,23 @@ I'm sure that there are others who have developed similar tools, and I am not su
 ## Links 
 
 * [MathToolKit Documentation](http://www.maa.org/sites/default/files/images/upload_library/4/vol1/toolkitjava/JOMA/javadocs/mathtoolkit/packages.html)
+* [Joe Yanik Homepage](http://www.emporia.edu/~hyanik/)
 * [JOMA - Journal of Online Mathematics and its Applications](http://www.maa.org/loci-category/joma)
 * [Original version of this README from MAA website](http://www.maa.org/press/periodicals/loci/joma/a-math-toolkit-for-java-developers)
+
+## License
+MathToolkit for Java
+
+|                      |                                             |
+|:---------------------|:--------------------------------------------|
+| **Author:**          | Joe Yanik (<yanikjoe@emporia.edu>)          |
+| **Copyright:**       | Copyright (c) 2001 Emporia State University |
+| **License:**         | GNU General Public License, Version 3       |
+
+
+The MathToolkit is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+The MathToolkit is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with the MathToolkit. If not, see http://www.gnu.org/licenses/.
+
