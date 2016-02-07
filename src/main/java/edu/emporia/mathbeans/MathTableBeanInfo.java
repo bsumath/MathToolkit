@@ -2,11 +2,11 @@ package EDU.emporia.mathbeans;
 
 import java.beans.*;
 import java.beans.SimpleBeanInfo;
-import symantec.itools.beans.*;
+//import symantec.itools.beans.*;
 
-public class EllipseBeanInfo extends java.beans.SimpleBeanInfo
+public class MathTableBeanInfo extends java.beans.SimpleBeanInfo
 {
-	public EllipseBeanInfo()
+	public MathTableBeanInfo()
 	{
 	}
 
@@ -54,13 +54,13 @@ public class EllipseBeanInfo extends java.beans.SimpleBeanInfo
 	{
 		java.awt.Image img = null;
 		if (nIconKind == BeanInfo.ICON_COLOR_16x16)
-				img = loadImage("Ellipse16.gif");
+				img = loadImage("MathTable16.gif");
 		if (nIconKind == BeanInfo.ICON_MONO_16x16)
-			img = loadImage("Ellipse16.gif");
+			img = loadImage("MathTable16.gif");
 		if (nIconKind == BeanInfo.ICON_COLOR_32x32)
-			img = loadImage("Ellipse32.gif");
+			img = loadImage("MathTable32.gif");
 		if (nIconKind == BeanInfo.ICON_MONO_32x32)
-			img = loadImage("Ellipse32.gif");
+			img = loadImage("MathTable32.gif");
 		return img;
 	}
 
@@ -70,15 +70,14 @@ public class EllipseBeanInfo extends java.beans.SimpleBeanInfo
 	public PropertyDescriptor[] getPropertyDescriptors()
 	{
 		try{
-			PropertyDescriptor xCenter = new PropertyDescriptor("xCenter",beanClass, "getXCenter","setXCenter");
-			PropertyDescriptor yCenter = new PropertyDescriptor("yCenter",beanClass, "getYCenter","setYCenter");
-			PropertyDescriptor xRadius = new PropertyDescriptor("xRadius",beanClass, "getXRadius","setXRadius");
-			PropertyDescriptor yRadius = new PropertyDescriptor("yRadius",beanClass, "getYRadius","setYRadius");
+			PropertyDescriptor xLabel = new PropertyDescriptor("xLabel",beanClass, "getXLabel","setXLabel");
+			PropertyDescriptor yLabel = new PropertyDescriptor("yLabel",beanClass, "getYLabel","setYLabel");
+			PropertyDescriptor Layout = new PropertyDescriptor("Layout",beanClass, "getLayout","setLayout");
+			Layout.setHidden(true);
 			PropertyDescriptor[] rv = {
-				xCenter
-				,yCenter
-				,xRadius
-				,yRadius
+				xLabel
+				,yLabel
+				,Layout
 			};
 			return rv;
 		}
@@ -88,5 +87,5 @@ public class EllipseBeanInfo extends java.beans.SimpleBeanInfo
 		}
 	}
 
-	private final Class beanClass = Ellipse.class;
+	private final Class beanClass = MathTable.class;
 }

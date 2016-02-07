@@ -2,11 +2,11 @@ package EDU.emporia.mathbeans;
 
 import java.beans.*;
 import java.beans.SimpleBeanInfo;
-import symantec.itools.beans.*;
+//import symantec.itools.beans.*;
 
-public class SlopeFieldBeanInfo extends java.beans.SimpleBeanInfo
+public class MathTextFieldBeanInfo extends java.beans.SimpleBeanInfo
 {
-	public SlopeFieldBeanInfo()
+	public MathTextFieldBeanInfo()
 	{
 	}
 
@@ -54,13 +54,13 @@ public class SlopeFieldBeanInfo extends java.beans.SimpleBeanInfo
 	{
 		java.awt.Image img = null;
 		if (nIconKind == BeanInfo.ICON_COLOR_16x16)
-				img = loadImage("SlopeField16.gif");
+				img = loadImage("MathTextField16.gif");
 		if (nIconKind == BeanInfo.ICON_MONO_16x16)
-			img = loadImage("SlopeField16.gif");
+			img = loadImage("MathTextField16.gif");
 		if (nIconKind == BeanInfo.ICON_COLOR_32x32)
-			img = loadImage("SlopeField32.gif");
+			img = loadImage("MathTextField32.gif");
 		if (nIconKind == BeanInfo.ICON_MONO_32x32)
-			img = loadImage("SlopeField32.gif");
+			img = loadImage("MathTextField32.gif");
 		return img;
 	}
 
@@ -70,25 +70,13 @@ public class SlopeFieldBeanInfo extends java.beans.SimpleBeanInfo
 	public PropertyDescriptor[] getPropertyDescriptors()
 	{
 		try{
-			PropertyDescriptor xDerivative = new PropertyDescriptor("xDerivative",beanClass, "getXDerivative","setXDerivative");
-			PropertyDescriptor yDerivative = new PropertyDescriptor("yDerivative",beanClass, "getYDerivative","setYDerivative");
-			PropertyDescriptor slopeRadius = new PropertyDescriptor("slopeRadius",beanClass, "getSlopeRadius","setSlopeRadius");
-			PropertyDescriptor eulerDelta = new PropertyDescriptor("eulerDelta",beanClass, "getEulerDelta","setEulerDelta");
-			PropertyDescriptor eulerPointNumber = new PropertyDescriptor("eulerPointNumber",beanClass, "getEulerPointNumber","setEulerPointNumber");
-			PropertyDescriptor eulerGraphColor = new PropertyDescriptor("eulerGraphColor",beanClass, "getEulerGraphColor","setEulerGraphColor");
-			PropertyDescriptor fieldColor = new PropertyDescriptor("fieldColor",beanClass, "getFieldColor","setFieldColor");
-			PropertyDescriptor eulerMouseEnabled = new PropertyDescriptor("eulerMouseEnabled",beanClass, "isEulerMouseEnabled","setEulerMouseEnabled");
+			PropertyDescriptor maxNumberOfCharacters = new PropertyDescriptor("maxNumberOfCharacters",beanClass, "getMaxNumberOfCharacters","setMaxNumberOfCharacters");
+			PropertyDescriptor autoNumberOfCharacters = new PropertyDescriptor("autoNumberOfCharacters",beanClass, "isAutoNumberOfCharacters","setAutoNumberOfCharacters");
 			PropertyDescriptor Layout = new PropertyDescriptor("Layout",beanClass, "getLayout","setLayout");
 			Layout.setHidden(true);
 			PropertyDescriptor[] rv = {
-				xDerivative
-				,yDerivative
-				,slopeRadius
-				,eulerDelta
-				,eulerPointNumber
-				,eulerGraphColor
-				,fieldColor
-				,eulerMouseEnabled
+				maxNumberOfCharacters
+				,autoNumberOfCharacters
 				,Layout
 			};
 			return rv;
@@ -99,5 +87,5 @@ public class SlopeFieldBeanInfo extends java.beans.SimpleBeanInfo
 		}
 	}
 
-	private final Class beanClass = SlopeField.class;
+	private final Class beanClass = MathTextField.class;
 }

@@ -2,11 +2,11 @@ package EDU.emporia.mathbeans;
 
 import java.beans.*;
 import java.beans.SimpleBeanInfo;
-import symantec.itools.beans.*;
+//import symantec.itools.beans.*;
 
-public class MathTextFieldBeanInfo extends java.beans.SimpleBeanInfo
+public class FunctionTableBeanInfo extends java.beans.SimpleBeanInfo
 {
-	public MathTextFieldBeanInfo()
+	public FunctionTableBeanInfo()
 	{
 	}
 
@@ -54,13 +54,13 @@ public class MathTextFieldBeanInfo extends java.beans.SimpleBeanInfo
 	{
 		java.awt.Image img = null;
 		if (nIconKind == BeanInfo.ICON_COLOR_16x16)
-				img = loadImage("MathTextField16.gif");
+				img = loadImage("FunctionTable16.gif");
 		if (nIconKind == BeanInfo.ICON_MONO_16x16)
-			img = loadImage("MathTextField16.gif");
+			img = loadImage("FunctionTable16.gif");
 		if (nIconKind == BeanInfo.ICON_COLOR_32x32)
-			img = loadImage("MathTextField32.gif");
+			img = loadImage("FunctionTable32.gif");
 		if (nIconKind == BeanInfo.ICON_MONO_32x32)
-			img = loadImage("MathTextField32.gif");
+			img = loadImage("FunctionTable32.gif");
 		return img;
 	}
 
@@ -70,13 +70,23 @@ public class MathTextFieldBeanInfo extends java.beans.SimpleBeanInfo
 	public PropertyDescriptor[] getPropertyDescriptors()
 	{
 		try{
-			PropertyDescriptor maxNumberOfCharacters = new PropertyDescriptor("maxNumberOfCharacters",beanClass, "getMaxNumberOfCharacters","setMaxNumberOfCharacters");
-			PropertyDescriptor autoNumberOfCharacters = new PropertyDescriptor("autoNumberOfCharacters",beanClass, "isAutoNumberOfCharacters","setAutoNumberOfCharacters");
+			PropertyDescriptor xLabel = new PropertyDescriptor("xLabel",beanClass, "getXLabel","setXLabel");
+			PropertyDescriptor yLabel = new PropertyDescriptor("yLabel",beanClass, "getYLabel","setYLabel");
+			PropertyDescriptor xMin = new PropertyDescriptor("xMin",beanClass, "getXMin","setXMin");
+			PropertyDescriptor xDelta = new PropertyDescriptor("xDelta",beanClass, "getXDelta","setXDelta");
+			PropertyDescriptor autoXValue = new PropertyDescriptor("autoXValue",beanClass, "isAutoXValue","setAutoXValue");
+			PropertyDescriptor f = new PropertyDescriptor("f",beanClass, "getF","setF");
+			PropertyDescriptor g = new PropertyDescriptor("g",beanClass, "getG","setG");
 			PropertyDescriptor Layout = new PropertyDescriptor("Layout",beanClass, "getLayout","setLayout");
 			Layout.setHidden(true);
 			PropertyDescriptor[] rv = {
-				maxNumberOfCharacters
-				,autoNumberOfCharacters
+				xLabel
+				,yLabel
+				,xMin
+				,xDelta
+				,autoXValue
+				,f
+				,g
 				,Layout
 			};
 			return rv;
@@ -87,5 +97,5 @@ public class MathTextFieldBeanInfo extends java.beans.SimpleBeanInfo
 		}
 	}
 
-	private final Class beanClass = MathTextField.class;
+	private final Class beanClass = FunctionTable.class;
 }

@@ -2,11 +2,11 @@ package EDU.emporia.mathbeans;
 
 import java.beans.*;
 import java.beans.SimpleBeanInfo;
-import symantec.itools.beans.*;
+//import symantec.itools.beans.*;
 
-public class TangentLineBeanInfo extends java.beans.SimpleBeanInfo
+public class ZoomControlPanelBeanInfo extends java.beans.SimpleBeanInfo
 {
-	public TangentLineBeanInfo()
+	public ZoomControlPanelBeanInfo()
 	{
 	}
 
@@ -54,13 +54,13 @@ public class TangentLineBeanInfo extends java.beans.SimpleBeanInfo
 	{
 		java.awt.Image img = null;
 		if (nIconKind == BeanInfo.ICON_COLOR_16x16)
-				img = loadImage("TangentLine16.gif");
+				img = loadImage("ZoomControl16.gif");
 		if (nIconKind == BeanInfo.ICON_MONO_16x16)
-			img = loadImage("TangentLine16.gif");
+			img = loadImage("ZoomControl16.gif");
 		if (nIconKind == BeanInfo.ICON_COLOR_32x32)
-			img = loadImage("TangentLine32.gif");
+			img = loadImage("ZoomControl32.gif");
 		if (nIconKind == BeanInfo.ICON_MONO_32x32)
-			img = loadImage("TangentLine32.gif");
+			img = loadImage("ZoomControl32.gif");
 		return img;
 	}
 
@@ -70,13 +70,14 @@ public class TangentLineBeanInfo extends java.beans.SimpleBeanInfo
 	public PropertyDescriptor[] getPropertyDescriptors()
 	{
 		try{
-			PropertyDescriptor xBase = new PropertyDescriptor("xBase",beanClass, "getXBase","setXBase");
-			PropertyDescriptor f = new PropertyDescriptor("f",beanClass, "getF","setF");
-			PropertyDescriptor fPrime = new PropertyDescriptor("fPrime",beanClass, "getFPrime","setFPrime");
+			PropertyDescriptor grapher = new PropertyDescriptor("grapher",beanClass, "getGrapher","setGrapher");
+			PropertyDescriptor zoomDelay = new PropertyDescriptor("zoomDelay",beanClass, "getZoomDelay","setZoomDelay");
+			PropertyDescriptor Layout = new PropertyDescriptor("Layout",beanClass, "getLayout","setLayout");
+			Layout.setHidden(true);
 			PropertyDescriptor[] rv = {
-				xBase
-				,f
-				,fPrime
+				grapher
+				,zoomDelay
+				,Layout
 			};
 			return rv;
 		}
@@ -86,5 +87,5 @@ public class TangentLineBeanInfo extends java.beans.SimpleBeanInfo
 		}
 	}
 
-	private final Class beanClass = TangentLine.class;
+	private final Class beanClass = ZoomControlPanel.class;
 }

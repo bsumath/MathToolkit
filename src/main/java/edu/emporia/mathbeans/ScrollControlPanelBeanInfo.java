@@ -1,12 +1,11 @@
 package EDU.emporia.mathbeans;
-
 import java.beans.*;
 import java.beans.SimpleBeanInfo;
-import symantec.itools.beans.*;
+//import symantec.itools.beans.*;
 
-public class SecantLineBeanInfo extends java.beans.SimpleBeanInfo
+public class ScrollControlPanelBeanInfo extends java.beans.SimpleBeanInfo
 {
-	public SecantLineBeanInfo()
+	public ScrollControlPanelBeanInfo()
 	{
 	}
 
@@ -54,13 +53,13 @@ public class SecantLineBeanInfo extends java.beans.SimpleBeanInfo
 	{
 		java.awt.Image img = null;
 		if (nIconKind == BeanInfo.ICON_COLOR_16x16)
-				img = loadImage("SecantLine16.gif");
+				img = loadImage("Scroller16.gif");
 		if (nIconKind == BeanInfo.ICON_MONO_16x16)
-			img = loadImage("SecantLine16.gif");
+			img = loadImage("Scroller16.gif");
 		if (nIconKind == BeanInfo.ICON_COLOR_32x32)
-			img = loadImage("SecantLine32.gif");
+			img = loadImage("Scroller32.gif");
 		if (nIconKind == BeanInfo.ICON_MONO_32x32)
-			img = loadImage("SecantLine32.gif");
+			img = loadImage("Scroller32.gif");
 		return img;
 	}
 
@@ -70,13 +69,14 @@ public class SecantLineBeanInfo extends java.beans.SimpleBeanInfo
 	public PropertyDescriptor[] getPropertyDescriptors()
 	{
 		try{
-			PropertyDescriptor xOne = new PropertyDescriptor("xOne",beanClass, "getXOne","setXOne");
-			PropertyDescriptor xTwo = new PropertyDescriptor("xTwo",beanClass, "getXTwo","setXTwo");
-			PropertyDescriptor f = new PropertyDescriptor("f",beanClass, "getF","setF");
+			PropertyDescriptor scrollDelay = new PropertyDescriptor("scrollDelay",beanClass, "getScrollDelay","setScrollDelay");
+			PropertyDescriptor grapher = new PropertyDescriptor("grapher",beanClass, "getGrapher","setGrapher");
+			PropertyDescriptor Layout = new PropertyDescriptor("Layout",beanClass, "getLayout","setLayout");
+			Layout.setHidden(true);
 			PropertyDescriptor[] rv = {
-				xOne
-				,xTwo
-				,f
+				scrollDelay
+				,grapher
+				,Layout
 			};
 			return rv;
 		}
@@ -86,5 +86,5 @@ public class SecantLineBeanInfo extends java.beans.SimpleBeanInfo
 		}
 	}
 
-	private final Class beanClass = SecantLine.class;
+	private final Class beanClass = ScrollControlPanel.class;
 }

@@ -2,11 +2,11 @@ package EDU.emporia.mathbeans;
 
 import java.beans.*;
 import java.beans.SimpleBeanInfo;
-import symantec.itools.beans.*;
+//import symantec.itools.beans.*;
 
-public class SymbolicParametricCurveBeanInfo extends java.beans.SimpleBeanInfo
+public class TangentLineBeanInfo extends java.beans.SimpleBeanInfo
 {
-	public SymbolicParametricCurveBeanInfo()
+	public TangentLineBeanInfo()
 	{
 	}
 
@@ -54,13 +54,13 @@ public class SymbolicParametricCurveBeanInfo extends java.beans.SimpleBeanInfo
 	{
 		java.awt.Image img = null;
 		if (nIconKind == BeanInfo.ICON_COLOR_16x16)
-				img = loadImage("Parametric16.gif");
+				img = loadImage("TangentLine16.gif");
 		if (nIconKind == BeanInfo.ICON_MONO_16x16)
-			img = loadImage("Parametric16.gif");
+			img = loadImage("TangentLine16.gif");
 		if (nIconKind == BeanInfo.ICON_COLOR_32x32)
-			img = loadImage("Parametric32.gif");
+			img = loadImage("TangentLine32.gif");
 		if (nIconKind == BeanInfo.ICON_MONO_32x32)
-			img = loadImage("Parametric32.gif");
+			img = loadImage("TangentLine32.gif");
 		return img;
 	}
 
@@ -70,11 +70,13 @@ public class SymbolicParametricCurveBeanInfo extends java.beans.SimpleBeanInfo
 	public PropertyDescriptor[] getPropertyDescriptors()
 	{
 		try{
-			PropertyDescriptor xFormula = new PropertyDescriptor("xFormula",beanClass, "getXFormula","setXFormula");
-			PropertyDescriptor yFormula = new PropertyDescriptor("yFormula",beanClass, "getYFormula","setYFormula");
+			PropertyDescriptor xBase = new PropertyDescriptor("xBase",beanClass, "getXBase","setXBase");
+			PropertyDescriptor f = new PropertyDescriptor("f",beanClass, "getF","setF");
+			PropertyDescriptor fPrime = new PropertyDescriptor("fPrime",beanClass, "getFPrime","setFPrime");
 			PropertyDescriptor[] rv = {
-				xFormula
-				,yFormula
+				xBase
+				,f
+				,fPrime
 			};
 			return rv;
 		}
@@ -84,5 +86,5 @@ public class SymbolicParametricCurveBeanInfo extends java.beans.SimpleBeanInfo
 		}
 	}
 
-	private final Class beanClass = SymbolicParametricCurve.class;
+	private final Class beanClass = TangentLine.class;
 }

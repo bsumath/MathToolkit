@@ -1,11 +1,12 @@
 package EDU.emporia.mathbeans;
+
 import java.beans.*;
 import java.beans.SimpleBeanInfo;
-import symantec.itools.beans.*;
+//import symantec.itools.beans.*;
 
-public class ScrollControlPanelBeanInfo extends java.beans.SimpleBeanInfo
+public class EllipseBeanInfo extends java.beans.SimpleBeanInfo
 {
-	public ScrollControlPanelBeanInfo()
+	public EllipseBeanInfo()
 	{
 	}
 
@@ -53,13 +54,13 @@ public class ScrollControlPanelBeanInfo extends java.beans.SimpleBeanInfo
 	{
 		java.awt.Image img = null;
 		if (nIconKind == BeanInfo.ICON_COLOR_16x16)
-				img = loadImage("Scroller16.gif");
+				img = loadImage("Ellipse16.gif");
 		if (nIconKind == BeanInfo.ICON_MONO_16x16)
-			img = loadImage("Scroller16.gif");
+			img = loadImage("Ellipse16.gif");
 		if (nIconKind == BeanInfo.ICON_COLOR_32x32)
-			img = loadImage("Scroller32.gif");
+			img = loadImage("Ellipse32.gif");
 		if (nIconKind == BeanInfo.ICON_MONO_32x32)
-			img = loadImage("Scroller32.gif");
+			img = loadImage("Ellipse32.gif");
 		return img;
 	}
 
@@ -69,14 +70,15 @@ public class ScrollControlPanelBeanInfo extends java.beans.SimpleBeanInfo
 	public PropertyDescriptor[] getPropertyDescriptors()
 	{
 		try{
-			PropertyDescriptor scrollDelay = new PropertyDescriptor("scrollDelay",beanClass, "getScrollDelay","setScrollDelay");
-			PropertyDescriptor grapher = new PropertyDescriptor("grapher",beanClass, "getGrapher","setGrapher");
-			PropertyDescriptor Layout = new PropertyDescriptor("Layout",beanClass, "getLayout","setLayout");
-			Layout.setHidden(true);
+			PropertyDescriptor xCenter = new PropertyDescriptor("xCenter",beanClass, "getXCenter","setXCenter");
+			PropertyDescriptor yCenter = new PropertyDescriptor("yCenter",beanClass, "getYCenter","setYCenter");
+			PropertyDescriptor xRadius = new PropertyDescriptor("xRadius",beanClass, "getXRadius","setXRadius");
+			PropertyDescriptor yRadius = new PropertyDescriptor("yRadius",beanClass, "getYRadius","setYRadius");
 			PropertyDescriptor[] rv = {
-				scrollDelay
-				,grapher
-				,Layout
+				xCenter
+				,yCenter
+				,xRadius
+				,yRadius
 			};
 			return rv;
 		}
@@ -86,5 +88,5 @@ public class ScrollControlPanelBeanInfo extends java.beans.SimpleBeanInfo
 		}
 	}
 
-	private final Class beanClass = ScrollControlPanel.class;
+	private final Class beanClass = Ellipse.class;
 }

@@ -2,7 +2,7 @@ package EDU.emporia.mathbeans;
 
 import java.beans.*;
 import java.beans.SimpleBeanInfo;
-import symantec.itools.beans.*;
+//import symantec.itools.beans.*;
 
 public class RandomPLFunctionBeanInfo extends java.beans.SimpleBeanInfo
 {

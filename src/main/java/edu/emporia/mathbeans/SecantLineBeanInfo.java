@@ -2,11 +2,11 @@ package EDU.emporia.mathbeans;
 
 import java.beans.*;
 import java.beans.SimpleBeanInfo;
-import symantec.itools.beans.*;
+//import symantec.itools.beans.*;
 
-public class ZoomControlPanelBeanInfo extends java.beans.SimpleBeanInfo
+public class SecantLineBeanInfo extends java.beans.SimpleBeanInfo
 {
-	public ZoomControlPanelBeanInfo()
+	public SecantLineBeanInfo()
 	{
 	}
 
@@ -54,13 +54,13 @@ public class ZoomControlPanelBeanInfo extends java.beans.SimpleBeanInfo
 	{
 		java.awt.Image img = null;
 		if (nIconKind == BeanInfo.ICON_COLOR_16x16)
-				img = loadImage("ZoomControl16.gif");
+				img = loadImage("SecantLine16.gif");
 		if (nIconKind == BeanInfo.ICON_MONO_16x16)
-			img = loadImage("ZoomControl16.gif");
+			img = loadImage("SecantLine16.gif");
 		if (nIconKind == BeanInfo.ICON_COLOR_32x32)
-			img = loadImage("ZoomControl32.gif");
+			img = loadImage("SecantLine32.gif");
 		if (nIconKind == BeanInfo.ICON_MONO_32x32)
-			img = loadImage("ZoomControl32.gif");
+			img = loadImage("SecantLine32.gif");
 		return img;
 	}
 
@@ -70,14 +70,13 @@ public class ZoomControlPanelBeanInfo extends java.beans.SimpleBeanInfo
 	public PropertyDescriptor[] getPropertyDescriptors()
 	{
 		try{
-			PropertyDescriptor grapher = new PropertyDescriptor("grapher",beanClass, "getGrapher","setGrapher");
-			PropertyDescriptor zoomDelay = new PropertyDescriptor("zoomDelay",beanClass, "getZoomDelay","setZoomDelay");
-			PropertyDescriptor Layout = new PropertyDescriptor("Layout",beanClass, "getLayout","setLayout");
-			Layout.setHidden(true);
+			PropertyDescriptor xOne = new PropertyDescriptor("xOne",beanClass, "getXOne","setXOne");
+			PropertyDescriptor xTwo = new PropertyDescriptor("xTwo",beanClass, "getXTwo","setXTwo");
+			PropertyDescriptor f = new PropertyDescriptor("f",beanClass, "getF","setF");
 			PropertyDescriptor[] rv = {
-				grapher
-				,zoomDelay
-				,Layout
+				xOne
+				,xTwo
+				,f
 			};
 			return rv;
 		}
@@ -87,5 +86,5 @@ public class ZoomControlPanelBeanInfo extends java.beans.SimpleBeanInfo
 		}
 	}
 
-	private final Class beanClass = ZoomControlPanel.class;
+	private final Class beanClass = SecantLine.class;
 }

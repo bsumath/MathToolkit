@@ -2,11 +2,11 @@ package EDU.emporia.mathbeans;
 
 import java.beans.*;
 import java.beans.SimpleBeanInfo;
-import symantec.itools.beans.*;
+//import symantec.itools.beans.*;
 
-public class ParametricTableBeanInfo extends java.beans.SimpleBeanInfo
+public class SymbolicParametricCurveBeanInfo extends java.beans.SimpleBeanInfo
 {
-	public ParametricTableBeanInfo()
+	public SymbolicParametricCurveBeanInfo()
 	{
 	}
 
@@ -54,13 +54,13 @@ public class ParametricTableBeanInfo extends java.beans.SimpleBeanInfo
 	{
 		java.awt.Image img = null;
 		if (nIconKind == BeanInfo.ICON_COLOR_16x16)
-				img = loadImage("ParametricTable16.gif");
+				img = loadImage("Parametric16.gif");
 		if (nIconKind == BeanInfo.ICON_MONO_16x16)
-			img = loadImage("ParametricTable16.gif");
+			img = loadImage("Parametric16.gif");
 		if (nIconKind == BeanInfo.ICON_COLOR_32x32)
-			img = loadImage("ParametricTable32.gif");
+			img = loadImage("Parametric32.gif");
 		if (nIconKind == BeanInfo.ICON_MONO_32x32)
-			img = loadImage("ParametricTable32.gif");
+			img = loadImage("Parametric32.gif");
 		return img;
 	}
 
@@ -70,26 +70,11 @@ public class ParametricTableBeanInfo extends java.beans.SimpleBeanInfo
 	public PropertyDescriptor[] getPropertyDescriptors()
 	{
 		try{
-			PropertyDescriptor tMin = new PropertyDescriptor("tMin",beanClass, "getTMin","setTMin");
-			PropertyDescriptor tDelta = new PropertyDescriptor("tDelta",beanClass, "getTDelta","setTDelta");
-			PropertyDescriptor autoTValue = new PropertyDescriptor("autoTValue",beanClass, "isAutoTValue","setAutoTValue");
-			PropertyDescriptor f = new PropertyDescriptor("f",beanClass, "getF","setF");
-			PropertyDescriptor g = new PropertyDescriptor("g",beanClass, "getG","setG");
-			PropertyDescriptor xLabel = new PropertyDescriptor("xLabel",beanClass, "getXLabel","setXLabel");
-			PropertyDescriptor yLabel = new PropertyDescriptor("yLabel",beanClass, "getYLabel","setYLabel");
-			PropertyDescriptor tLabel = new PropertyDescriptor("tLabel",beanClass, "getTLabel","setTLabel");
-			PropertyDescriptor Layout = new PropertyDescriptor("Layout",beanClass, "getLayout","setLayout");
-			Layout.setHidden(true);
+			PropertyDescriptor xFormula = new PropertyDescriptor("xFormula",beanClass, "getXFormula","setXFormula");
+			PropertyDescriptor yFormula = new PropertyDescriptor("yFormula",beanClass, "getYFormula","setYFormula");
 			PropertyDescriptor[] rv = {
-				tMin
-				,tDelta
-				,autoTValue
-				,f
-				,g
-				,xLabel
-				,yLabel
-				,tLabel
-				,Layout
+				xFormula
+				,yFormula
 			};
 			return rv;
 		}
@@ -99,5 +84,5 @@ public class ParametricTableBeanInfo extends java.beans.SimpleBeanInfo
 		}
 	}
 
-	private final Class beanClass = ParametricTable.class;
+	private final Class beanClass = SymbolicParametricCurve.class;
 }
