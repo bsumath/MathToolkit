@@ -1,5 +1,7 @@
 group = 'edu.emporia.mathbeans'
 description = 'MathBeans for Java'
+archivesBaseName = 'mathbeans'
+
 buildDir = '../build'
 
 dependencies {

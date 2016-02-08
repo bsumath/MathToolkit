@@ -7,8 +7,10 @@ allprojects {
   apply plugin: 'java'
   apply plugin: 'com.cinnober.gradle.semver-git'
 }
+
 group = 'edu.emporia.mathtoolkit'
 description = 'MathToolkit for Java'
+archivesBaseName = 'mathtoolkit'
 
 subprojects.each { evaluationDependsOn( it.path ) }
 jar {
