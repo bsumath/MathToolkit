@@ -1,0 +1,25 @@
+plugins {
+  id 'java'
+  id 'com.cinnober.gradle.semver-git' version '2.2.2'
+}
+repositories { mavenCentral() }
+allprojects {
+  apply plugin: 'java'
+  apply plugin: 'com.cinnober.gradle.semver-git'
+}
+group = 'edu.emporia.mathtoolkit'
+description = 'MathToolkit for Java'
+
+subprojects.each { evaluationDependsOn( it.path ) }
+jar {
+  manifest {
+    attributes 'Implementation-Title': project.description,  
+        	     'Implementation-Version': project.version
+  }
+  
+  subprojects.each { subproject ->     
+    dependsOn subproject.tasks['jar']
+    from subproject.configurations.archives.allArtifacts.files.collect { zipTree(it) }
+  }
+}
+

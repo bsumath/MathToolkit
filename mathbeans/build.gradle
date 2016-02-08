@@ -1,0 +1,7 @@
+group = 'edu.emporia.mathbeans'
+description = 'MathBeans for Java'
+buildDir = '../build'
+
+dependencies {
+  compile project(path: ':mathtools')
+}

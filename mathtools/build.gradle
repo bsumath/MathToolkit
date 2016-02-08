@@ -1,0 +1,3 @@
+group = 'edu.emporia.mathtools'
+description = 'MathTools for Java'
+buildDir = '../build'
