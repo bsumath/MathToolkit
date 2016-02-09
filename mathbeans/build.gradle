@@ -1,9 +1,7 @@
-group = 'edu.emporia.mathbeans'
+group = 'edu.emporia'
 description = 'MathBeans for Java'
-archivesBaseName = 'mathbeans'
-
 buildDir = '../build'
 
 dependencies {
-  compile project(path: ':mathtools')
+  compile rootProject.subprojects.find{ it.name == 'mathtools'}
 }

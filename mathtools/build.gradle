@@ -1,5 +1,3 @@
-group = 'edu.emporia.mathtools'
+group = 'edu.emporia'
 description = 'MathTools for Java'
-archivesBaseName = 'mathtools'
-
 buildDir = '../build'

@@ -1,36 +1,37 @@
 buildscript {
-  repositories {
-    mavenCentral()
-    maven { url "https://plugins.gradle.org/m2/" }
-  }
+    repositories {
+        mavenCentral()
+        maven { url "https://plugins.gradle.org/m2/" }
+    }
 
-  dependencies {
-    classpath "com.cinnober.gradle:semver-git:2.2.2"
-  }
+    dependencies {
+        classpath "com.cinnober.gradle:semver-git:2.2.2"
+    }
 }
 
 allprojects {
-  ext.snapshotSuffix = "<count>.g<sha>-SNAPSHOT"
-  ext.nextVersion = "patch"
+    ext.snapshotSuffix = "<count>.g<sha>-SNAPSHOT"
+    ext.nextVersion = "patch"
 
-  apply plugin: 'java'
-  apply plugin: 'com.cinnober.gradle.semver-git'
+    apply plugin: 'java'
+    apply plugin: 'com.cinnober.gradle.semver-git'
 }
 
-group = 'edu.emporia.mathtoolkit'
-description = 'MathToolkit for Java'
-archivesBaseName = 'mathtoolkit'
+apply plugin: 'idea'
 
-subprojects.each { evaluationDependsOn( it.path ) }
+group = 'edu.emporia'
+description = 'MathToolkit for Java'
+
+subprojects.each { evaluationDependsOn(it.path) }
 jar {
-  manifest {
-    attributes 'Implementation-Title': project.description,  
-        	     'Implementation-Version': project.version
-  }
-  
-  subprojects.each { subproject ->     
-    dependsOn subproject.tasks['jar']
-    from subproject.configurations.archives.allArtifacts.files.collect { zipTree(it) }
-  }
+    manifest {
+        attributes 'Implementation-Title': project.description,
+                'Implementation-Version': project.version
+    }
+
+    subprojects.each { subproject ->
+        dependsOn subproject.tasks['jar']
+        from subproject.configurations.archives.allArtifacts.files.collect { zipTree(it) }
+    }
 }
 

@@ -1,1 +1,2 @@
 include ':mathtools', ':mathbeans'
+rootProject.name = 'mathtoolkit'
